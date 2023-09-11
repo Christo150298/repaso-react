@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const example = [ "a" , "b" , "c" ]
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul>
+        { example.map((item) => {
+          return(
+            <li>
+              <input className='userName'/>
+              <button>Eliminar {item} </button>
+              <p>
+                Dinero invertido <strong>{ (Math.random() * 10000).toFixed(2) }</strong>
+              </p>
+            </li>
+          );
+        }) }
+      </ul>
     </div>
   );
 }
